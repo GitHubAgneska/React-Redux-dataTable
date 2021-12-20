@@ -1,6 +1,11 @@
 import {initialState } from '../store'
 import produce from 'immer'
-import { LIST_FETCHING, LIST_RESOLVED, LIST_REJECTED } from '../actions/actions-types'
+import { 
+    LIST_FETCHING, LIST_RESOLVED, LIST_REJECTED,
+    SETUP_COLLECTION,
+    SET_ENTRIES_AMOUNT, SET_CURRENT_ACTIVE_PAGE, SET_CURRENT_PAGE_INDEX,
+    SETUP_COLLECTION_AS_PAGES,
+} from '../actions/actions-types'
 
 // ......................................................
 // EMPLOYEES LIST  REDUCER
@@ -9,47 +14,78 @@ export default function listReducer(state = initialState.list, action) {
 
     return produce(state, (draft) => {
         switch (action.type) {
-            
+            // FETCH ACTIONS
             case LIST_FETCHING: {
-                if ( draft.get_status === 'void') {
-                    draft.get_status = 'pending'
+                if ( draft.status === 'idle') {
+                    draft.status = 'loading'
                     return
                 }
-                if (draft.get_status === 'rejected') {
-                    draft.get_error = null
-                    draft.get_status = 'pending'
+                if (draft.status === 'rejected') {
+                    draft.error = null
+                    draft.status = 'loading'
                     return
                 }
-                if ( draft.get_status === 'resolved') {
-                    draft.get_status = 'updating' // ongoing request but presence of data
+                if ( draft.status === 'resolved') {
+                    draft.status = 'updating' // ongoing request but presence of data
                     return
                 }
-                console.log(' 1 - LIST_FETCHING => status===', draft.get_status )
+                console.log(' 1 - LIST_FETCHING => status===', draft.status )
                 return // else action ignored
             }
-
             case LIST_RESOLVED: {
-                if ( draft.get_status === 'pending' || draft.get_status === 'updating') {
-                    draft.get_status = 'resolved'
-                    draft.get_payload = action.payload.employees
-                    draft.originalList = [...draft.originalList, ...draft.get_payload]
-                    // console.log('PAYLOAD TYPE==', typeof(action.payload))
+                if ( draft.status === 'loading' || draft.status === 'updating') {
+                    draft.status = 'resolved'
+                    draft.data = action.payload.employees
+                    if ( !draft.collection ) { draft.collection = action.payload.employees }
                     return 
                 }
                 console.log('2 - LIST_RESOLVED => PAYLOAD DONE'  )
                 return // else action ignored
             }
-
             case LIST_REJECTED: {
-                if ( draft.get_status === 'pending' || draft.get_status === 'updating') {
+                if ( draft.status === 'loading' || draft.status === 'updating') {
                     // set to rejected, save error, delete data
-                    draft.get_status = 'rejected'
-                    draft.get_error = action.payload
-                    draft.get_payload = null
+                    draft.status = 'rejected'
+                    draft.error = action.payload
+                    draft.payload = null
                     return 
                 }
                 return // else action ignored
             }
+            // CURRENT COLLECTION ( all results/ sorted /searched )
+            case SETUP_COLLECTION: {
+                if (draft.collection) { draft.collection = null } // reset collection
+                draft.collection = action.payload
+                return
+            }
+            
+            // PAGINATE ACTIONS (NOT ASYNC)
+            case SET_ENTRIES_AMOUNT: {
+                let newAmount = action.payload;
+                return { ...state, entries: newAmount }
+            }
+            case SETUP_COLLECTION_AS_PAGES: {
+                let pages = action.payload
+                console.log('4 - PAGINATION REDUCER ==> - SET_RESULTS_AS_PAGES ==> NOW'  )
+                return { ...state, collectionAsPages: pages }
+            }
+            case SET_CURRENT_ACTIVE_PAGE: {
+                let requestedIndex = action.payload
+                return { ...state, currentPage: state.collectionAsPages[requestedIndex-1] }
+            }
+            case SET_CURRENT_PAGE_INDEX: {
+                let pageRequested = action.payload
+                return { ...state, currentPageIndex: pageRequested-1  }
+            }
+
+            // SORT ACTIONS
+
+            // SEARCH ACTIONS
+
+
+
+
+
             default: return
         }
     })

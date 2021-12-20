@@ -1,4 +1,9 @@
 import { Fragment } from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchList, selectAllList, selectCollectionAsPages } from '../../features/list_feature'
+import { listState, initialState } from '../state/store'
+
 import Pagination from '../../components/Pagination/Pagination'
 import SearchBox from '../../components/SearchBox/SearchBox'
 import SelectEntriesBox from '../../components/SelectEntriesBox/SelectEntriesBox'
@@ -9,7 +14,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import  { TableWrapper, StyledTable, StyledTableHeader, TableHeaderIconWrapper, StyledTableRow } from './DataTable_style'
 
 
-const DataTable = ({collection, sortListBy}) => {
+const DataTable = () => {
+
+    const dispatch = useDispatch()
+    const list = useSelector(selectAllList)
+    const listStatus = useSelector(initialState => initialState.list.status)
+
+    const collectionAsPages = useSelector(selectCollectionAsPages)
+    
+
+    useEffect(() => {
+        if (listStatus === 'idle') {
+            dispatch(fetchList())
+        }
+        if (!collectionAsPages) {
+            dispatch(setUpCollectionAsPages())
+        }
+
+    }, [listStatus, collectionAsPages, dispatch])
+
 
     console.log('DATATABLE RECEIVES COLLECTION =====>', collection)
     const tableHead = [ 'firstName', 'lastName', 'dob', 'startDate', 'street', 'city', 'state', 'zipcode', 'department']
