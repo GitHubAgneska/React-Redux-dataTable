@@ -1,0 +1,75 @@
+{
+  "name": "hrnet-app",
+  "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/runtime": "^7.15.4",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@mui/material": "^5.1.0",
+    "@reduxjs/toolkit": "1.6.2",
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "faker": "^5.5.3",
+    "immer": "^9.0.6",
+    "jest": "^27.3.1",
+    "jest-html-reporter": "^3.4.1",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "7.2.5",
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "^5.0.0-next.47",
+    "react-spinners": "^0.11.0",
+    "react-test-renderer": "^17.0.2",
+    "redux": "4.1.1",
+    "redux-thunk": "^2.3.0",
+    "seedrandom": "^3.0.5",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.4",
+    "@types/react": "^17.0.19",
+    "@types/react-redux": "7.1.19",
+    "babel-preset-react-app": "*",
+    "json-loader": "^0.5.7",
+    "lodash": "^4.17.21",
+    "miragejs": "^0.1.42",
+    "prettier": "^2.4.1"
+  }
+}

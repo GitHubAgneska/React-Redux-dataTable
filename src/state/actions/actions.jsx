@@ -1,0 +1,9 @@
+import { LIST_FETCHING, LIST_RESOLVED, LIST_REJECTED } from './actions-types'
+
+// ................................................................................. 
+// ACTIONS CREATORS : EMPLOYEES LIST 
+// ................................................................................. 
+// EMPLOYEES LIST - GET/POST DATA actions...................................................
+export const ListFetching = () => (dispatch) => (dispatch({type: LIST_FETCHING }))
+export const listResolved = (data) => (dispatch) => (dispatch({type: LIST_RESOLVED, payload: data}))
+export const ListRejected = (error) => (dispatch) => (dispatch({type: LIST_REJECTED, payload: error}))
