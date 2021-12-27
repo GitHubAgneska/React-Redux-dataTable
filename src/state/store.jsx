@@ -1,23 +1,24 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux"
+import { createStore, combineReducers, applyMiddleware, compose} from "redux"
 import thunk from 'redux-thunk'
 import listReducer from './reducers/list-reducer'
 
 export const initialState = {
     list: {
-        status: 'idle' | 'loading' | 'resolved' | 'rejected',
+        status: 'void',
         data: null,
         error: null,
 
         collection: null,
         sorted: false,
         sortedBy: { sortParam: '', reverse: false },
-        searchedBy: false,
+        searchActive: false,
         searchTerm: '',
 
         collectionAsPages: null,
-        entries: 10,
+        entries: 15,
         currentPage: null,
-        currentPageIndex: 0
+        currentPageIndex: null,
+        totalPages: 1
     }
 }
 

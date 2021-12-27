@@ -1,6 +1,6 @@
 import { PaginationWrapper, PageNumber } from './Pagination_style'
 
-const Pagination = ({totalPages, currentPage, updatePage}) => { 
+const Pagination = ({totalPages, currentActivePage, changePage}) => { 
 
     return (
 
@@ -9,8 +9,8 @@ const Pagination = ({totalPages, currentPage, updatePage}) => { 
             {[...Array(totalPages)].map((x, i) =>
                 <PageNumber
                     key={Math.random()}
-                    currentActivePage={i===currentPage}
-                    onClick={()=> updatePage(i)}
+                    currentActivePage={i===currentActivePage}
+                    onClick={()=> changePage(i)}
                     >{i+1}</PageNumber>
             )}
         
