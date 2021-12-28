@@ -4,11 +4,6 @@ export const LIST_FETCHING ='list/fetching';
 export const LIST_RESOLVED ='list/resolved';
 export const LIST_REJECTED ='list/rejected';
 
-// POST request
-export const CREATE_EMPLOYEE_FETCHING ='employees-list/create_fetching';
-export const CREATE_EMPLOYEE_RESOLVED ='employees-list/create_resolved';
-export const CREATE_EMPLOYEE_REJECTED ='employees-list/create_rejected';
-
 export const SETUP_COLLECTION = 'list/collection'
 export const SETUP_COLLECTION_AS_PAGES = 'list/collection/pages'
 export const SET_ENTRIES_COUNT = 'list/collection/entries'
