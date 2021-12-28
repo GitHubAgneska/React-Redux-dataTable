@@ -1,11 +1,26 @@
 {
   "name": "react_advanced_datatable",
+  "author": "HAGENAY",
+  "keywords": ["react", "components", "ui", "data table", "pagination", "search"],
   "version": "0.1.0",
+  "private": false,
   "engines": {
     "node": "16.x"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GitHubAgneska/React-advanced-dataTable"
+  },
   "dependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.8",
     "@babel/runtime": "^7.15.4",
     "@emotion/react": "^11.5.0",
@@ -24,11 +39,8 @@
     "jest": "^27.3.1",
     "jest-html-reporter": "^3.4.1",
     "moment": "^2.29.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-redux": "7.2.5",
     "react-router-dom": "^5.2.1",
-    "react-scripts": "^5.0.0-next.47",
     "react-spinners": "^0.11.0",
     "react-test-renderer": "^17.0.2",
     "redux": "4.1.1",
@@ -65,11 +77,13 @@
     "@types/prop-types": "^15.7.4",
     "@types/react": "^17.0.19",
     "@types/react-redux": "7.1.19",
-    "babel-cli": "^6.26.0",
     "babel-preset-react-app": "*",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "miragejs": "^0.1.42",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0-next.47"
   }
 }

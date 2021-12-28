@@ -12,6 +12,7 @@
     - MirageJs
 
 ## Installation
+`npm i react-advanced-dataTable`
 
 
 
