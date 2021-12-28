@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
-import { store } from './state/store'
-import { makeServer } from './api/server'
+import { store } from './lib/state/store'
+import { makeServer } from './lib/api/server'
 
 
 makeServer()

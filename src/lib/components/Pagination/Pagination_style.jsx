@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
 export const PaginationWrapper = styled.div`
-    width: 80%; margin: auto;
+    width: 80%; margin: 3% auto;
+    
     display: flex; flex-flow: row nowrap;
     justify-content: center;
+    border: 1px solid grey; border-radius: 5px;
 `
 
 export const PageNumber = styled.div`
@@ -12,7 +14,7 @@ export const PageNumber = styled.div`
     background-color: lightgray;
     display: flex; justify-content: center; align-content:center;
     border-radius: 50%;
-    ${ ({currentActivePage}) => currentActivePage && 'border:1px solid red'}
+    ${ ({currentActivePage}) => currentActivePage && 'border: 1px solid red'}
 `
 
 export const Paginated =  styled.div`

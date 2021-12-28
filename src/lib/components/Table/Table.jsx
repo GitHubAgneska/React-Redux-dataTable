@@ -1,6 +1,5 @@
-//import TableRow  from './Table-row'
 import TableHeader from './Table-header'
-import { TableWrapper, StyledTableHeader, StyledTable, StyledTableRow } from './Table_style'
+import { TableWrapper, StyledTableHeader, StyledTable, StyledTableRow } from  '../../containers/DataTable/DataTable_style'
 import moment from 'moment'
 import { useSelector } from 'react-redux'
 
@@ -11,6 +10,7 @@ const Table = ({currentPageToDisplay, sortListBy}) => {
     const tableHead = [ 'firstName', 'lastName', 'dob', 'startDate', 'street', 'city', 'state', 'zipcode', 'department']
 
     const tableRow = employee => {
+        // eslint-disable-next-line no-unused-vars
         const { key, value } = employee
         const tableCell = [...tableHead]
         

@@ -8,8 +8,9 @@ import Table from '../../components/Table/Table'
 import Pagination from "../../components/Pagination/Pagination"
 import SelectEntriesBox from '../../components/SelectEntriesBox/SelectEntriesBox'
 import SearchBox from "../../components/SearchBox/SearchBox"
-
 import { searchSuggestions } from '../../utils/searchText'
+
+import { ComponentWrapper } from './DataTable_style'
 
 export const DataTable = () => {
     
@@ -85,7 +86,7 @@ export const DataTable = () => {
 
 
     return (
-        <div>
+        <ComponentWrapper>
 
             <SelectEntriesBox 
                 options={entriesOptions}
@@ -117,7 +118,7 @@ export const DataTable = () => {
                 changePage={changePage}
             />
 
-        </div>
+        </ComponentWrapper>
     )
 }
 export default DataTable

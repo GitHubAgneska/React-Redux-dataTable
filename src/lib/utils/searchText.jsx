@@ -15,9 +15,7 @@ export const searchSuggestions = (query, list) => {
             else { objectValue = value }
             
             if ( objectValue.includes(query) || reg.test(objectValue) )  { 
-                
-                //let highligtedValue = `<span style={{backgroundColor:'yellow'}}>`+ objectValue + `</span>`
-                
+                                
                 if (suggestions.has(objectValue)) { suggestions.get(objectValue).push(obj) }
                 else {
                     suggested.push(obj)

@@ -1,9 +1,16 @@
 import styled from "styled-components"
 
+export const ComponentWrapper = styled.div`
+    height:100vh; width: 90%;
+    margin:auto; padding-top: 5%;
+`
+
+
 export const TableWrapper = styled.div`
     display: flex;
     max-height: 90%;
     overflow: scroll;
+    border:1px solid grey;
 `
 
 export const StyledTable = styled.table` 
@@ -31,9 +38,12 @@ export const TableHeaderIconWrapper = styled.div`
 export const StyledTableRow = styled.tr`
     height: 2rem;
     
-    :nth-child(even) {background-color: #ccc }
+    :nth-child(even) {background-color: #ccc }
     &:hover { background-color: lightblue; color: white;  }
     
-    td { width: 10%; overflow: hidden;}
+    td { 
+        width: 10%;
+        overflow: hidden;
+    }
 `
 

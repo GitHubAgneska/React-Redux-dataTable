@@ -2,10 +2,10 @@ import React, {Fragment, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-import { GlobalStyle } from './style/global_style'
-import DataTable from './containers/DataTable/DataTable';
+import { GlobalStyle } from './lib/style/global_style'
+import DataTable from './lib/containers/DataTable/DataTable';
 
-import { fetchList } from './features/list_feature'
+import { fetchList } from './lib/features/list_feature'
 
 const App = () => {
 
@@ -32,7 +32,7 @@ const App = () => {
                         <Fragment>
                             <Switch>
                             { proceed ?
-                                <Route exact path="/employees-list" component={DataTable} />
+                                <Route exact path="/" component={DataTable} />
                                 :'loading...'
                                 }
                             </Switch>

@@ -60,17 +60,6 @@ export const SrOnlyH2 = styled.h2`
     white-space: nowrap !important; /* 3 */
 `;
 
-export const TitleWrapper = styled.div`
-    width:90%;
-    margin: 2% auto;
-    border: 1px solid grey;
-    border-radius:5px;
-    text-align: center;
-`
-export const StyledTitle = styled.h1`
-    color: grey;
-    font-size:1em;
-`
 
 
 
