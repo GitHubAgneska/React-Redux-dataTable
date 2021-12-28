@@ -1,4 +1,4 @@
-//import TableRow  from './Table-row'
+import PropTypes from "prop-types"
 import TableHeader from './Table-header'
 import { TableWrapper, StyledTableHeader, StyledTable, StyledTableRow } from './Table_style'
 import moment from 'moment'
@@ -42,3 +42,8 @@ const Table = ({currentPageToDisplay, sortListBy}) => {
 }
 
 export default Table
+
+Table.propTypes = {
+    currentPageToDisplay: PropTypes.array.isRequired,
+    sortListBy: PropTypes.func.isRequired,
+}

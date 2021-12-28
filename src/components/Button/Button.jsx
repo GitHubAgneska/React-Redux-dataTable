@@ -12,5 +12,7 @@ export default Button
 
 Button.propTypes = { 
     btnName: PropTypes.string.isRequired,
-    // handleClick: PropTypes.func.isRequired
+    handleClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
+    width: PropTypes.string
 }
