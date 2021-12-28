@@ -32,7 +32,7 @@ const App = () => {
                         <Fragment>
                             <Switch>
                             { proceed ?
-                                <Route exact path="/employees-list" component={DataTable} />
+                                <Route exact path="/" component={DataTable} />
                                 :'loading...'
                                 }
                             </Switch>
