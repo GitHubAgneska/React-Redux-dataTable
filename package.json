@@ -1,10 +1,9 @@
 {
-  "name": "hrnet-app",
+  "name": "react_advanced_datatable",
   "version": "0.1.0",
   "engines": {
     "node": "16.x"
   },
-  "private": true,
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
@@ -40,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -66,6 +65,7 @@
     "@types/prop-types": "^15.7.4",
     "@types/react": "^17.0.19",
     "@types/react-redux": "7.1.19",
+    "babel-cli": "^6.26.0",
     "babel-preset-react-app": "*",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
