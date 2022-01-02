@@ -33,10 +33,10 @@ Object.defineProperty(exports, "SearchBox", {
     return _SearchBox.default;
   }
 });
-Object.defineProperty(exports, "SelectEntries", {
+Object.defineProperty(exports, "SelectEntriesBox", {
   enumerable: true,
   get: function get() {
-    return _SelectEntries.default;
+    return _SelectEntriesBox.default;
   }
 });
 Object.defineProperty(exports, "Table", {
@@ -84,7 +84,7 @@ var _Pagination = _interopRequireDefault(require("./components/Pagination/Pagina
 
 var _SearchBox = _interopRequireDefault(require("./components/SearchBox/SearchBox"));
 
-var _SelectEntries = _interopRequireDefault(require("./components/SelectEntries/SelectEntries"));
+var _SelectEntriesBox = _interopRequireDefault(require("./components/SelectEntriesBox/SelectEntriesBox"));
 
 var _Table = _interopRequireDefault(require("./components/Table/Table"));
 

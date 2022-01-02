@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const PaginationWrapper = styled.div`
     width: 80%; margin: 3% auto;
-    
     display: flex; flex-flow: row nowrap;
     justify-content: center;
     border: 1px solid grey; border-radius: 5px;

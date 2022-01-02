@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var PaginationWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 80%; margin: 3% auto;\n    \n    display: flex; flex-flow: row nowrap;\n    justify-content: center;\n    border: 1px solid grey; border-radius: 5px;\n"])));
+var PaginationWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 80%; margin: 3% auto;\n    display: flex; flex-flow: row nowrap;\n    justify-content: center;\n    border: 1px solid grey; border-radius: 5px;\n"])));
 
 exports.PaginationWrapper = PaginationWrapper;
 

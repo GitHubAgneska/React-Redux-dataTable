@@ -28,6 +28,8 @@ var Button = function Button(_ref) {
 var _default = Button;
 exports.default = _default;
 Button.propTypes = {
-  btnName: _propTypes.default.string.isRequired // handleClick: PropTypes.func.isRequired
-
+  btnName: _propTypes.default.string.isRequired,
+  handleClick: _propTypes.default.func,
+  disabled: _propTypes.default.bool,
+  width: _propTypes.default.string
 };
